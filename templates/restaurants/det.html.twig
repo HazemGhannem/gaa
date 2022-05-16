@@ -1,0 +1,846 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block body %}
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="rtmodal-1" tabindex="-1" role="dialog" aria-labelledby="rtmodal-1"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered rt-lgoinmodal " role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="rt-modal-headr rt-mb-20 one">
+                        <img src="front/assets/images/logo/Logo-icon.png" alt="modal logo" draggable="false">
+                        <h4>Login in to Emigrar</h4>
+                        <p>Log in to get in the moment updates on the things
+                            that interest you.</p>
+                    </div><!-- /.rt-modal-headr -->
+                    <div class="rt-modal-headr rt-mb-20 two">
+                        <img src="front/assets/images/logo/Logo-icon.png" alt="modal logo" draggable="false">
+                        <h4>Create your Account</h4>
+                        <p>Log in to get in the moment updates on the things
+                            that interest you.</p>
+                    </div><!-- /.rt-modal-headr -->
+                    <div class="rt-modal-input one">
+                        <form action="#" class="rt-form">
+                            <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
+                            <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
+                            <div class="form-group forgot-pass">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheckss">
+                                    <label class="form-check-label" for="gridCheckss">
+                                        Remember Password
+                                    </label>
+                                </div><!-- ./orm-group -->
+                            </div>
+                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
+                        </form>
+                        <div class="ac-register">
+                            <span>Don’t have an account? <a href="#" class="open-creatac">Sign Up Now <i class="icofont-double-right"></i></a></span>
+                        </div><!-- /.ac-register -->
+                    </div><!-- /.rt-modal-input -->
+                    <div class="rt-modal-input two">
+                        <form action="#" class="rt-form">
+                            <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
+                            <input type="password" class="form-control pill rt-mb-15" placeholder="Enter your mail address">
+                            <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
+                            <div class="form-group forgot-pass">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck333">
+                                    <label class="form-check-label" for="gridCheck333">
+                                        I'd like to hear about promos, new products,and much more!
+                                    </label>
+                                </div><!-- ./orm-group -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck222">
+                                    <label class="form-check-label" for="gridCheck222">
+                                        By clicking "Sign up" you agree to our Terms of Service and Privacy Policy
+                                    </label>
+                                </div><!-- ./orm-group -->
+                            </div>
+                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
+                        </form>
+                        <div class="ac-register">
+                            <span>Already have an account?<a href="#">LOGIN <i class="icofont-double-right"></i></a></span>
+
+                        </div><!-- /.ac-register -->
+                    </div><!-- /.rt-modal-input -->
+                    <div class="rt-modal-footer">
+                        <span>Or</span>
+                        <h4>Sign Up with social media</h4>
+                        <ul class="rt-social rt-circle-style2">
+
+                            <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li><a href="#"><i class="icofont-linkedin"></i></a></li>
+                        </ul>
+                    </div><!-- /.rt-modal-footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="rt-breadcump rt-breadcump-height">
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url(front/assets/images/backgrounds/bredcump.png)">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>{{ restaurant.nom }}</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="{{ path('home') }}" title="Home">Home</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            <a href="restaurants" title="Home">Restaurant</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            {{ restaurant.nom }}
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+
+
+
+
+    <section class="content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="rt-duel-slider-main rt-mb-30">
+                        <div class="single-main rtbgprefix-cover"
+
+                             style="background-image: url('/upload/img/{{ restaurant.photo }}')">
+
+                        </div><!-- /.single-main -->
+
+
+                    </div><!-- /.rt-duel-slider-main -->
+
+                </div><!-- /.col-lg-7 -->
+                <div class="col-lg-5 mt-5 mt-lg-0">
+                    <div class="hotel-inner-content">
+                        <h5 class="f-size-18 rt-medium">{{ restaurant.nom }}</h5>
+                        <p class="f-size-13"><span class="text-555">{{ restaurant.nom }}</span> <span
+                                    class="pl-2 text-777">| {{ restaurant.type }}</span></p>
+                        <p class="rt-mt-15 rt-mb-20">
+                            <span class="badge rt-gradinet-badge pill rt-mr-10"> {{ restaurant.note }} <small>/5</small></span>
+
+                        </p>
+                        <p class="f-size-14 text-333"> {{ restaurant.adresse }}</p>
+                        <p class="primary-color">
+                            Unique about this restaurent:
+                        </p>
+                        <p class="primary-color">
+                            {{ restaurant.description }}
+                        </p>
+
+
+                        <div class="rt-divider style-one rt-mb-30"></div><!-- /.rt-divider -->
+                        <div class="d-flex flex-md-row flex-column justify-content-md-between">
+
+                            <div>
+                                <a href="MesReservationPlat" class="rt-btn rt-gradient3 rt-sm2 text-uppercase pill">Mes Reservations</a>
+                            </div>
+                            <div>
+                                <a href="{{ path('plats',{'id': restaurant.id_resto }) }}" class="rt-btn rt-gradient rt-sm2 text-uppercase pill">Reserver Plats</a>
+                            </div>
+                        </div><!-- /.d-flex -->
+                        <div class="rt-divider style-one rt-mt-30"></div><!-- /.rt-divider -->
+                        <div class="rt-mt-25">
+
+                        </div><!-- /. social -->
+                    </div><!-- /.hotel-text -->
+                </div><!-- /.col-lg-5 -->
+            </div><!-- /.row -->
+            <div class="row">
+                <div class="col-12 rt-mt-58">
+                    <div class="hotel-tabs">
+                        <div class="flight-list-box rt-mb-40">
+                            <ul class="nav rt-tab-nav-1 pill  pl-md-4 pr-md-4" id="myTab-2"
+                                role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="rt-itm_1-tab" data-toggle="tab" href="#rt-itm_1"
+                                       role="tab" aria-controls="rt-itm_1" aria-selected="true">Contact</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" id="rt-itm_5-tab" data-toggle="tab" href="#rt-itm_5"
+                                       role="tab" aria-controls="rt-itm_5" aria-selected="false">Map</a>
+                                </li>
+
+
+
+                            </ul>
+                        </div><!-- /.hotle-del-box -->
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="rt-itm_1" role="tabpanel"
+                                 aria-labelledby="rt-itm_1-tab">
+                                <div class="flight-list-box rt-mb-30">
+                                    <div class="inner-content rt-pl-15">
+                                        <h4
+                                                class="badge-hilighit color--1 f-size-14 text-white text-font text-uppercase rt-mb-30 rt-mt-15 rt-strong">
+                                            N°Telephone: </h4>
+                                        <p>{{ restaurant.num_tel }}</p>
+                                        <h4
+                                                class="badge-hilighit color--1 f-size-14 text-white text-font text-uppercase rt-mb-30 rt-mt-15 rt-strong">
+                                            Adresse Email: </h4>
+                                        <p>{{ restaurant.email }}</p>
+
+                                    </div><!-- /.inner-content -->
+                                </div><!-- /.flight-list-box -->
+                            </div>
+                            <div class="tab-pane fade" id="rt-itm_2" role="tabpanel" aria-labelledby="rt-itm_2-tab">
+                                <div class="flight-list-box rt-mb-30">
+                                    <div class="w3-content w3-display-container">
+                                        <img class="mySlides" src="front/assets/images/resta1/1.jpg "   >
+                                        <img class="mySlides" src="front/assets/images/resta1/2.jpg" >
+                                        <img class="mySlides" src="front/assets/images/resta1/3.jpg" >
+                                        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                                        <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+                                    </div>
+                                    <script>
+                                        var slideIndex = 1;
+                                        showDivs(slideIndex);
+
+                                        function plusDivs(n) {
+                                            showDivs(slideIndex += n);
+                                        }
+
+                                        function showDivs(n) {
+                                            var i;
+                                            var x = document.getElementsByClassName("mySlides");
+                                            if (n > x.length) {slideIndex = 1}
+                                            if (n < 1) {slideIndex = x.length}
+                                            for (i = 0; i < x.length; i++) {
+                                                x[i].style.display = "none";
+                                            }
+                                            x[slideIndex-1].style.display = "block";
+                                        }
+                                    </script>
+                                </div><!-- /.flight-list-box -->
+
+                            </div>
+                            <div class="tab-pane fade" id="rt-itm_3" role="tabpanel" aria-labelledby="rt-itm_3-tab">
+
+
+                                <ul class="trip-timeline rt-list">
+                                    <li class="time-line-item flight-list-box rt-mb-22">
+                                        <div class="timeline-counter">
+                                            <div class="inner-item">
+                                                <span class="d-block f-size-18 text-white">Day</span>
+                                                <span class="d-block f-size-28 text-white rt-strong">01</span>
+                                            </div><!-- /.inner-item -->
+                                        </div><!-- /.timeline-counter -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4 class="f-size-18 rt-semiblod rt-mb-25"> <span class="f-size-14 d-block rt-mb-5">Guilin</span>
+                                                    Welcome To China!
+                                                </h4>
+                                            </div><!-- /.col-12 -->
+                                            <div class="col-md-4">
+                                                <img src="front/assets/images/all-img/ex-1.jpg" alt="trip image" draggable="false">
+                                            </div><!-- /.col-md-4 -->
+                                            <div class="col-md-8 mt-5 mt-md-0">
+                                                <p class="f-size-16 rt-strong">
+                                                    Welcome to Guilin! Upon your arrival in Guilin, the most scenic city in China, your personal guide will meet you and
+                                                    escort you to your hotel.
+                                                </p>
+                                                <p class="f-size-14">
+                                                    The rest of the day is yours to relax and spend as you want. You can choose to step out into this dynamic city for a
+                                                    little adventure of your own.Transfer to your hotel, where you can rest, or explore your surroundings at your leisure.
+                                                    Your private tour through China's cultural highlights begins tomorrow!
+                                                </p>
+                                                <ul class="rt-list">
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-1.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-2.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-3.png" alt="image" draggable="false">
+                                                    </li>
+                                                </ul>
+                                            </div><!-- /.col-md-8 -->
+                                        </div><!-- /.row -->
+                                    </li>
+                                    <li class="time-line-item flight-list-box rt-mb-22">
+                                        <div class="timeline-counter">
+                                            <div class="inner-item">
+                                                <span class="d-block f-size-18 text-white">Day</span>
+                                                <span class="d-block f-size-28 text-white rt-strong">02</span>
+                                            </div><!-- /.inner-item -->
+                                        </div><!-- /.timeline-counter -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4 class="f-size-18 rt-semiblod rt-mb-25"> <span class="f-size-14 d-block rt-mb-5">Guilin</span>
+                                                    Visit Tiananmen Square, the Spiritual Heart of China
+                                                </h4>
+                                            </div><!-- /.col-12 -->
+                                            <div class="col-md-4">
+                                                <img src="front/assets/images/all-img/ex-2.jpg" alt="trip image" draggable="false">
+                                            </div><!-- /.col-md-4 -->
+                                            <div class="col-md-8 mt-5 mt-md-0">
+                                                <p class="f-size-16 rt-strong">
+                                                    Welcome to Guilin! Upon your arrival in Guilin, the most scenic city in China, your personal guide will meet you and
+                                                    escort you to your hotel.
+                                                </p>
+                                                <p class="f-size-14">
+                                                    The rest of the day is yours to relax and spend as you want. You can choose to step out into this dynamic city for a
+                                                    little adventure of your own.Transfer to your hotel, where you can rest, or explore your surroundings at your leisure.
+                                                    Your private tour through China's cultural highlights begins tomorrow!
+                                                </p>
+                                                <ul class="rt-list">
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-1.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-2.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-3.png" alt="image" draggable="false">
+                                                    </li>
+                                                </ul>
+                                            </div><!-- /.col-md-8 -->
+                                        </div><!-- /.row -->
+                                    </li>
+                                    <li class="time-line-item flight-list-box rt-mb-22">
+                                        <div class="timeline-counter">
+                                            <div class="inner-item">
+                                                <span class="d-block f-size-18 text-white">Day</span>
+                                                <span class="d-block f-size-28 text-white rt-strong">03</span>
+                                            </div><!-- /.inner-item -->
+                                        </div><!-- /.timeline-counter -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4 class="f-size-18 rt-semiblod rt-mb-25"> <span class="f-size-14 d-block rt-mb-5">Guilin</span>
+                                                    Beijing History and a Trip to The Great Wall
+                                                </h4>
+                                            </div><!-- /.col-12 -->
+                                            <div class="col-md-4">
+                                                <img src="front/assets/images/all-img/ex-3.jpg" alt="trip image" draggable="false">
+                                            </div><!-- /.col-md-4 -->
+                                            <div class="col-md-8 mt-5 mt-md-0">
+                                                <p class="f-size-16 rt-strong">
+                                                    Welcome to Guilin! Upon your arrival in Guilin, the most scenic city in China, your personal guide will meet you and
+                                                    escort you to your hotel.
+                                                </p>
+                                                <p class="f-size-14">
+                                                    The rest of the day is yours to relax and spend as you want. You can choose to step out into this dynamic city for a
+                                                    little adventure of your own.Transfer to your hotel, where you can rest, or explore your surroundings at your leisure.
+                                                    Your private tour through China's cultural highlights begins tomorrow!
+                                                </p>
+                                                <ul class="rt-list">
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-1.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-2.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-3.png" alt="image" draggable="false">
+                                                    </li>
+                                                </ul>
+                                            </div><!-- /.col-md-8 -->
+                                        </div><!-- /.row -->
+                                    </li>
+                                    <li class="time-line-item flight-list-box rt-mb-22">
+                                        <div class="timeline-counter">
+                                            <div class="inner-item">
+                                                <span class="d-block f-size-18 text-white">Day</span>
+                                                <span class="d-block f-size-28 text-white rt-strong">04</span>
+                                            </div><!-- /.inner-item -->
+                                        </div><!-- /.timeline-counter -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4 class="f-size-18 rt-semiblod rt-mb-25"> <span class="f-size-14 d-block rt-mb-5">Guilin</span>
+                                                    Religion and Cuisine in Xi'an
+                                                </h4>
+                                            </div><!-- /.col-12 -->
+                                            <div class="col-md-4">
+                                                <img src="front/assets/images/all-img/ex-4.jpg" alt="trip image" draggable="false">
+                                            </div><!-- /.col-md-4 -->
+                                            <div class="col-md-8 mt-5 mt-md-0">
+                                                <p class="f-size-16 rt-strong">
+                                                    Welcome to Guilin! Upon your arrival in Guilin, the most scenic city in China, your personal guide will meet you and
+                                                    escort you to your hotel.
+                                                </p>
+                                                <p class="f-size-14">
+                                                    The rest of the day is yours to relax and spend as you want. You can choose to step out into this dynamic city for a
+                                                    little adventure of your own.Transfer to your hotel, where you can rest, or explore your surroundings at your leisure.
+                                                    Your private tour through China's cultural highlights begins tomorrow!
+                                                </p>
+                                                <ul class="rt-list">
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-1.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-2.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-3.png" alt="image" draggable="false">
+                                                    </li>
+                                                </ul>
+                                            </div><!-- /.col-md-8 -->
+                                        </div><!-- /.row -->
+                                    </li>
+                                    <li class="time-line-item flight-list-box rt-mb-22">
+                                        <div class="timeline-counter">
+                                            <div class="inner-item">
+                                                <span class="d-block f-size-18 text-white">Day</span>
+                                                <span class="d-block f-size-28 text-white rt-strong">05</span>
+                                            </div><!-- /.inner-item -->
+                                        </div><!-- /.timeline-counter -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4 class="f-size-18 rt-semiblod rt-mb-25"> <span class="f-size-14 d-block rt-mb-5">Guilin</span>
+                                                    Amongst the Terracotta Warriors
+                                                </h4>
+                                            </div><!-- /.col-12 -->
+                                            <div class="col-md-4">
+                                                <img src="front/assets/images/all-img/ex-5.jpg" alt="trip image" draggable="false">
+                                            </div><!-- /.col-md-4 -->
+                                            <div class="col-md-8 mt-5 mt-md-0">
+                                                <p class="f-size-16 rt-strong">
+                                                    Welcome to Guilin! Upon your arrival in Guilin, the most scenic city in China, your personal guide will meet you and
+                                                    escort you to your hotel.
+                                                </p>
+                                                <p class="f-size-14">
+                                                    The rest of the day is yours to relax and spend as you want. You can choose to step out into this dynamic city for a
+                                                    little adventure of your own.Transfer to your hotel, where you can rest, or explore your surroundings at your leisure.
+                                                    Your private tour through China's cultural highlights begins tomorrow!
+                                                </p>
+                                                <ul class="rt-list">
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-1.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-2.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-3.png" alt="image" draggable="false">
+                                                    </li>
+                                                </ul>
+                                            </div><!-- /.col-md-8 -->
+                                        </div><!-- /.row -->
+                                    </li>
+                                    <li class="time-line-item flight-list-box rt-mb-22">
+                                        <div class="timeline-counter">
+                                            <div class="inner-item">
+                                                <span class="d-block f-size-18 text-white">Day</span>
+                                                <span class="d-block f-size-28 text-white rt-strong">06</span>
+                                            </div><!-- /.inner-item -->
+                                        </div><!-- /.timeline-counter -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h4 class="f-size-18 rt-semiblod rt-mb-25"> <span class="f-size-14 d-block rt-mb-5">Guilin</span>
+                                                    Amongst the Terracotta Warriors
+                                                </h4>
+                                            </div><!-- /.col-12 -->
+                                            <div class="col-md-4">
+                                                <img src="front/assets/images/all-img/ex-6.jpg" alt="trip image" draggable="false">
+                                            </div><!-- /.col-md-4 -->
+                                            <div class="col-md-8 mt-5 mt-md-0">
+                                                <p class="f-size-16 rt-strong">
+                                                    Welcome to Guilin! Upon your arrival in Guilin, the most scenic city in China, your personal guide will meet you and
+                                                    escort you to your hotel.
+                                                </p>
+                                                <p class="f-size-14">
+                                                    The rest of the day is yours to relax and spend as you want. You can choose to step out into this dynamic city for a
+                                                    little adventure of your own.Transfer to your hotel, where you can rest, or explore your surroundings at your leisure.
+                                                    Your private tour through China's cultural highlights begins tomorrow!
+                                                </p>
+                                                <ul class="rt-list">
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-1.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mr-10 rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-2.png" alt="image" draggable="false">
+                                                    </li>
+                                                    <li class="rt-hw-60 primary-color rt-dorder-off rt-circle text-center d-inline-block rt-mt-10">
+                                                        <img src="front/assets/images/all-img/ex-3.png" alt="image" draggable="false">
+                                                    </li>
+                                                </ul>
+                                            </div><!-- /.col-md-8 -->
+                                        </div><!-- /.row -->
+                                    </li>
+                                </ul>
+                                <div class="text-center">
+                                    <a href="#" class="rt-btn rt-gradient pill rt-sm2 text-uppercase rt-mt-10 rt-Bshadow-2">Customize this trip</a>
+                                </div><!-- /.text-center -->
+
+
+                            </div>
+
+                            <div class="tab-pane fade" id="rt-itm_5" role="tabpanel" aria-labelledby="rt-itm_5-tab">
+                                <div class="flight-list-box rt-mb-30">
+                                    <iframe src="http://maps.google.com/maps?q={{ restaurant.nom }}{{ restaurant.ville }}&z=10&output=embed" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+                                </div><!-- /.flight-list-box -->
+
+                            </div>
+                            <div class="tab-pane fade" id="rt-itm_6" role="tabpanel" aria-labelledby="rt-itm_6-tab">
+                                <div class="flight-list-box rt-mb-30 row">
+                                    <div class="col-12">
+                                        <h4 class="f-seize-18 rt-semiblod rt-mb-30">Reviews <span class="f-size-14">(86 verified reviews)</span>
+                                        </h4>
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4">
+                                                <div class="review-box rt-pt-36 rt-pb-30 rt-pr-30 rt-pl-30 rt-dborder-primary text-center rounded">
+                                                    <h4 class="f-size-24 primary-color">Excellent</h4>
+                                                    <h5 class="f-size-60 primary-color"><span class="rt-strong">4.3</span><span
+                                                                class="f-size-14 text-878 rt-">/5</span></h5>
+                                                    <h6 class="f-size-18"><span class="primary-color">Emigrar</span> Verified Reviews</h6>
+                                                </div><!-- /.review-box -->
+                                            </div><!-- /.col-md-4 -->
+                                            <div class="col-md-7 offset-md-1">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="single-progress rt-mb-30">
+                                                            <div class="progress-title f-size-18 heading-color-1"><span
+                                                                        class="float-right">4.4</span><span>Location</span></div>
+                                                            <div class="progress" data-percent="80%">
+                                                                <span class="progress-bar bg-gr-1"></span>
+                                                            </div>
+                                                        </div><!-- /.single-progress -->
+                                                        <div class="single-progress rt-mb-30">
+                                                            <div class="progress-title f-size-18 heading-color-1"><span
+                                                                        class="float-right">4.4</span><span>Service</span></div>
+                                                            <div class="progress" data-percent="80%">
+                                                                <span class="progress-bar bg-gr-1"></span>
+                                                            </div>
+                                                        </div><!-- /.single-progress -->
+                                                    </div><!-- /.col-md-6 -->
+                                                    <div class="col-md-6">
+                                                        <div class="single-progress rt-mb-30">
+                                                            <div class="progress-title f-size-18 heading-color-1"><span
+                                                                        class="float-right">4.5</span><span>Cleanliness</span></div>
+                                                            <div class="progress" data-percent="80%">
+                                                                <span class="progress-bar bg-gr-1"></span>
+                                                            </div>
+                                                        </div><!-- /.single-progress -->
+                                                        <div class="single-progress rt-mb-30">
+                                                            <div class="progress-title f-size-18 heading-color-1"><span
+                                                                        class="float-right">4.5</span><span>Facilities</span></div>
+                                                            <div class="progress" data-percent="80%">
+                                                                <span class="progress-bar bg-gr-1"></span>
+                                                            </div>
+                                                        </div><!-- /.single-progress -->
+                                                    </div><!-- /.col-md-6 -->
+                                                </div><!-- /.row -->
+
+                                            </div><!-- /.col-md-4 -->
+                                        </div><!-- /.row -->
+                                    </div><!-- /.col-12 -->
+                                </div><!-- /.flight-list-box -->
+                                <div class="flight-list-box single-commnets row rt-mb-30">
+                                    <div
+                                            class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
+                                        <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20"
+                                             style="background-image: url(front/assets/images/all-img/cmnt-2.jpg)">
+                                        </div><!-- /.cmnt-thumb -->
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in
+                                        Nov 2018</span>
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov
+                                        2018</span>
+                                    </div><!-- /.left-coulmn -->
+                                    <div class="col-lg-9 col-md-8 pl-md-5">
+                                        <h4 class="f-size-17 rt-strong">Simon Lopez <span class="rt-pl-15 f-size-14"> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i></span></h4>
+                                        <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
+                                        <p class="f-size-14 text-333">
+                                            I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the
+                                            15 floor to the
+                                            Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown
+                                            within few
+                                            meters. It is close to downtown and great price!
+                                        </p>
+
+                                        <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
+                                    </div><!-- /.right-column -->
+                                </div><!-- /.flight-list-box -->
+                                <div class="flight-list-box single-commnets row rt-mb-30">
+                                    <div
+                                            class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
+                                        <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20"
+                                             style="background-image: url(front/assets/images/all-img/cmnt-3.jpg)">
+                                        </div><!-- /.cmnt-thumb -->
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in
+                                        Nov 2018</span>
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov
+                                        2018</span>
+                                    </div><!-- /.left-coulmn -->
+                                    <div class="col-md-8 col-lg-9 pl-md-5">
+                                        <h4 class="f-size-17 rt-strong">Gary Dunn <span class="rt-pl-15 f-size-14"> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i></span></h4>
+                                        <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
+                                        <p class="f-size-14 text-333">
+                                            I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the
+                                            15 floor to the
+                                            Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown
+                                            within few
+                                            meters. It is close to downtown and great price!
+                                        </p>
+
+                                        <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
+                                    </div><!-- /.right-column -->
+                                </div><!-- /.flight-list-box -->
+                                <div class="flight-list-box single-commnets row rt-mb-30">
+                                    <div
+                                            class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
+                                        <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20"
+                                             style="background-image: url(front/assets/images/all-img/cmnt-4.jpg)">
+                                        </div><!-- /.cmnt-thumb -->
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in
+                                        Nov 2018</span>
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov
+                                        2018</span>
+                                    </div><!-- /.left-coulmn -->
+                                    <div class="col-md-8 col-lg-9 pl-md-5">
+                                        <h4 class="f-size-17 rt-strong">Mark Ques <span class="rt-pl-15 f-size-14"> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i></span></h4>
+                                        <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
+                                        <p class="f-size-14 text-333">
+                                            I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the
+                                            15 floor to the
+                                            Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown
+                                            within few
+                                            meters. It is close to downtown and great price!
+                                        </p>
+
+                                        <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
+                                    </div><!-- /.right-column -->
+                                </div><!-- /.flight-list-box -->
+                                <div class="flight-list-box single-commnets row rt-mb-30">
+                                    <div
+                                            class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
+                                        <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20"
+                                             style="background-image: url(front/assets/images/all-img/cmnt-5.jpg)">
+                                        </div><!-- /.cmnt-thumb -->
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in
+                                        Nov 2018</span>
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov
+                                        2018</span>
+                                    </div><!-- /.left-coulmn -->
+                                    <div class="col-md-8 col-lg-9 pl-md-5">
+                                        <h4 class="f-size-17 rt-strong">Mans Livly <span class="rt-pl-15 f-size-14"> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i></span></h4>
+                                        <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
+                                        <p class="f-size-14 text-333">
+                                            I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the
+                                            15 floor to the
+                                            Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown
+                                            within few
+                                            meters. It is close to downtown and great price!
+                                        </p>
+
+                                        <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
+                                    </div><!-- /.right-column -->
+                                </div><!-- /.flight-list-box -->
+                                <div class="flight-list-box single-commnets row rt-mb-30">
+                                    <div
+                                            class="col-lg-3 col-md-4  rt-dashed-primary rt-pt-30 rt-pl-30 rt-pb-30 rt-pr-30 rt-dborder-primary rounded">
+                                        <div class="cmnt-thumb rt-hw-60 rt-border-primary rounded-circle rtbgprefix-cover rt-mb-20"
+                                             style="background-image: url(front/assets/images/all-img/cmnt-2.jpg)">
+                                        </div><!-- /.cmnt-thumb -->
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-ui-calendar rt-mr-5"></i></span>Stayed in
+                                        Nov 2018</span>
+                                        <span class="d-block f-size-13 text-878"> <span><i class="icofont-edit rt-mr-5"></i></span>Stayed in Nov
+                                        2018</span>
+                                    </div><!-- /.left-coulmn -->
+                                    <div class="col-md-8 pl-md-5">
+                                        <h4 class="f-size-17 rt-strong">Sirlon Mika <span class="rt-pl-15 f-size-14"> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i><i class="icofont-star review"></i> <i
+                                                        class="icofont-star review"></i></span></h4>
+                                        <span class="f-size-13 text-878 d-block rt-mb-15">November 20, 2018 at 8:31 pm</span>
+                                        <p class="f-size-14 text-333">
+                                            I am very please with Garden View Hong Kong Hotel! I will certainly return. I got a wonderful from the
+                                            15 floor to the
+                                            Botanical Garden a great Supermarket in the corner, about 2 minutes walking, and a bus stop to downtown
+                                            within few
+                                            meters. It is close to downtown and great price!
+                                        </p>
+
+                                        <a href="#" class="replay-cmnt text-uppercase rt-strong">Reply <i class="icofont-reply-all"></i> </a>
+                                    </div><!-- /.right-column -->
+                                </div><!-- /.flight-list-box -->
+                            </div>
+                        </div>
+
+                    </div><!-- /.hotel-tabs -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+
+
+        </div><!-- /.container -->
+    </section>
+
+    <!--
+        !============= Footer Area Start ===========!
+     -->
+    <section class="rt-site-footer" data-scrollax-parent="true">
+        <div class="rt-shape-emenetns-1" style="background-image: url(front/assets/images/shape-elements/shape-4.png)" data-scrollax="properties: { translateY: '340px' }"></div><!-- /.rt-shape-emenetns-1 -->
+        <div class="footer-top rtbgprefix-cover" style="background-image: url(front/assets/images/backgrounds/footerbg.png)">
+            <div class="footer-subscripbe-box wow fade-in-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-10 mx-auto text-center">
+                            <div class="rt-section-title-wrapper text-white">
+                                <h2 class="rt-section-title">
+                                    <span>Newsletter</span>
+
+                                    Get The Latest news
+                                </h2><!-- /.rt-section-title -->
+                                <p>
+                                    Get the latest travel inspirations and deals from Emigrar semimonthly with your email. You can
+                                    unsubscribe at any time. Your privacy & personal information will be treated.
+                                </p>
+                            </div><!-- /.rt-section-title-wrapper -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                    <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
+                    <div class="row">
+                        <div class="col-lg-7 mx-auto">
+                            <div class="input-group mb-5">
+                                <input type="text" class="form-control" placeholder="Enter your email address" aria-describedby="button-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn" type="button" id="button-addon2">Subcribe Now</button>
+                                </div>
+                            </div><!-- end input gorup -->
+                        </div><!-- /.col-lg-7 -->
+                    </div><!-- /.row -->
+                    <div class="rt-dot-divider"></div><!-- /.rt-dot-divider -->
+                </div><!-- /.container -->
+            </div><!-- /.footer-subscripbe-box -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="1s">
+                            <h3 class="rt-footer-title">Company Info</h3><!-- /.rt-footer-title -->
+                            <ul class="rt-usefulllinks">
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Authenticity Guarantee</a>
+                                </li>
+                                <li>
+                                    <a href="#">Customer Reviews</a>
+                                </li>
+                                <li>
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Business License</a>
+                                </li>
+
+                            </ul>
+
+                        </div><!-- /.rt-single-widge -->
+                    </div><!-- /.col-lg-3-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="1.5s">
+                            <h3 class="rt-footer-title">Work With Us</h3>
+                            <ul class="rt-usefulllinks">
+                                <li><a href="#">Become Partner</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Become Affiliate</a></li>
+                                <li><a href="#">Associations</a></li>
+                                <li><a href="#">Advertise with us</a></li>
+                                <li><a href="#">Retirement Plan</a></li>
+                                <li><a href="#">Travel APIs</a></li>
+                            </ul>
+                        </div><!-- /.rt-single-widget -->
+                    </div><!-- /.col-lg-3-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="2s">
+                            <h3 class="rt-footer-title">
+                                My Account
+                            </h3>
+                            <ul class="rt-usefulllinks">
+
+                                <li><a href="#">Manage Your Account</a></li>
+                                <li><a href="#">Build your own trip</a></li>
+                                <li><a href="#">Order Sttatus</a></li>
+                                <li><a href="#">Booking Guide</a></li>
+                                <li><a href="#">Travel Insurance & Safety Guide</a></li>
+                            </ul><!-- /.rt-usefulllinks -->
+                        </div><!-- end single widget -->
+                    </div><!-- /.col-lg-3-->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="rt-single-widget wow fade-in-bottom" data-wow-duration="2.5s">
+                            <h3 class="rt-footer-title">
+                                Plan Your Trip
+                            </h3>
+                            <ul class="rt-usefulllinks">
+                                <li><a href="#">Special Offers</a></li>
+                                <li><a href="#">Hotels</a></li>
+                                <li><a href="#">Flights</a></li>
+                                <li><a href="#">Tour Packages</a></li>
+                                <li><a href="#">Accommodations</a></li>
+                                <li><a href="#">Transportation</a></li>
+                            </ul><!-- /.rt-usefulllinks -->
+                        </div><!-- end single widget -->
+                    </div><!-- /.col-lg-3-->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.footer-top -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 text-center text-lg-left">
+                        <div class="copy-text wow fade-in-bottom" data-wow-duration="1s">
+                            Copyright © 2018.All Rights Reserved By <a href="#">Emigrar</a>
+                        </div><!-- /.copy-text -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6 text-center text-lg-right">
+                        <div class="rt-footer-social wow fade-in-bottom" data-wow-duration="1.5s">
+                            <ul>
+                                <li><a href="#"><img src="front/assets/images/brands/card-1.png" alt="cardimage" draggable="false"></a></li>
+                                <li><a href="#"><img src="front/assets/images/brands/card-2.png" alt="cardimage" draggable="false"></a></li>
+                                <li><a href="#"><img src="front/assets/images/brands/card-3.png" alt="cardimage" draggable="false"></a></li>
+                                <li><a href="#"><img src="front/assets/images/brands/card-4.png" alt="cardimage" draggable="false"></a></li>
+                                <li><a href="#"><img src="front/assets/images/brands/card-5.png" alt="cardimage" draggable="false"></a></li>
+
+                            </ul>
+                        </div><!-- /.rt-footer-social -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.footer-bottom -->
+    </section>
+
+{% endblock %}
+

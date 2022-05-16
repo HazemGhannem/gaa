@@ -1,0 +1,167 @@
+{% extends 'admin/base.html.twig' %}
+ {% block title %} <title>Plats Admin</title> {% endblock %}
+{% block css %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Skydash Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../vendors/feather/feather.css">
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+
+{% endblock %}
+
+{% block body %}
+
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Recherche :</h4>
+                                <form method="POST">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Plats" name="nom_plat" aria-label="Recipient's username">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-sm btn-primary" type="submit"value="Search" type="button">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        .centerbtnAMD {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                        }
+                    </style>
+
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card" >
+                            <div class="card-body" >
+                                <h4 class="card-title">Gestion des Plats :</h4>
+                                <div class="centerbtnAMD" >
+                                    <div>
+                                        <button onclick="document.location='addPlat'" type="button" class="btn btn-success btn-icon-text">
+                                            <i class="ti-upload btn-icon-prepend"></i>
+                                            Ajouter Plat
+                                        </button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Listes Des Plats </h4>
+                                <p class="card-description">
+
+                                </p>
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+
+
+                                            <th>Id_plat</th>
+                                            <th>Id_resto</th>
+                                            <th>Nom</th>
+                                            <th>Compositions</th>
+                                            <th>Prix</th>
+                                            <th>Type</th>
+                                            <th>Photos</th>
+                                            <th>Modifier</th>
+                                            <th>Supprimer</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in plats %}
+                                        <tr>
+                                            <td>{{ i.id_plat }}</td>
+                                            <td>{{ i.restoId }}</td>
+                                            <td> {{ i.nom }}</td>
+                                            <td>{{ i.composition }}</td>
+                                            <td>{{ i.prix }}</td>
+                                            <td>{{ i.type }}</td>
+                                            <td>{{ i.photo }}</td>
+                                            <td><a class="btn btn-warning btn-icon-text" href={{ path('modifierPlat',{'id': i.id_plat }) }}><i class="ti-reload btn-icon-prepend"></i> </a> </td>
+                                            <td><a class="btn btn-danger btn-icon-text" href={{ path('supprimerPlat',{'id': i.id_plat }) }}><i class="mdi mdi-delete btn-icon-prepend"></i> </a> </td>
+
+                                        </tr>
+                                        {% endfor %}
+
+
+
+
+                                        </tbody>
+                                    </table>
+                                    {{ knp_pagination_render(plats) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:../../partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+{% endblock %}
+
+{% block JS %}
+    <!-- plugins:js -->
+    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="../../vendors/select2/select2.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../../js/select2.js"></script>
+    <!-- End custom js for this page-->
+
+{% endblock %}

@@ -1,0 +1,330 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="rtmodal-1" tabindex="-1" role="dialog" aria-labelledby="rtmodal-1"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered rt-lgoinmodal " role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="rt-modal-headr rt-mb-20 one">
+                        <img src="front/assets/images/logo/Logo-icon.png" alt="modal logo" draggable="false">
+                        <h4>Login in to Emigrar</h4>
+                        <p>Log in to get in the moment updates on the things
+                            that interest you.</p>
+                    </div><!-- /.rt-modal-headr -->
+                    <div class="rt-modal-headr rt-mb-20 two">
+                        <img src="front/assets/images/logo/Logo-icon.png" alt="modal logo" draggable="false">
+                        <h4>Create your Account</h4>
+                        <p>Log in to get in the moment updates on the things
+                            that interest you.</p>
+                    </div><!-- /.rt-modal-headr -->
+                    <div class="rt-modal-input one">
+                        <form action="#" class="rt-form">
+                            <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
+                            <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
+                            <div class="form-group forgot-pass">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheckss">
+                                    <label class="form-check-label" for="gridCheckss">
+                                        Remember Password
+                                    </label>
+                                </div><!-- ./orm-group -->
+                            </div>
+                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
+                        </form>
+                        <div class="ac-register">
+                            <span>Don’t have an account? <a href="#" class="open-creatac">Sign Up Now <i class="icofont-double-right"></i></a></span>
+                        </div><!-- /.ac-register -->
+                    </div><!-- /.rt-modal-input -->
+                    <div class="rt-modal-input two">
+                        <form action="#" class="rt-form">
+                            <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
+                            <input type="password" class="form-control pill rt-mb-15" placeholder="Enter your mail address">
+                            <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
+                            <div class="form-group forgot-pass">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck333">
+                                    <label class="form-check-label" for="gridCheck333">
+                                        I'd like to hear about promos, new products,and much more!
+                                    </label>
+                                </div><!-- ./orm-group -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck222">
+                                    <label class="form-check-label" for="gridCheck222">
+                                        By clicking "Sign up" you agree to our Terms of Service and Privacy Policy
+                                    </label>
+                                </div><!-- ./orm-group -->
+                            </div>
+                            <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
+                        </form>
+                        <div class="ac-register">
+                            <span>Already have an account?<a href="#">LOGIN <i class="icofont-double-right"></i></a></span>
+
+                        </div><!-- /.ac-register -->
+                    </div><!-- /.rt-modal-input -->
+                    <div class="rt-modal-footer">
+                        <span>Or</span>
+                        <h4>Sign Up with social media</h4>
+                        <ul class="rt-social rt-circle-style2">
+
+                            <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li><a href="#"><i class="icofont-linkedin"></i></a></li>
+                        </ul>
+                    </div><!-- /.rt-modal-footer -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="rt-breadcump rt-breadcump-height">
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url(front/assets/images/backgrounds/bredcump.png)">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>Restaurants</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="{{ path('home') }}" title="Home">Home</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            <a href="restaurants" title="Restaurants">Restaurants</a>
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+        <div class="bredcump--search-trip">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <form method="POST">
+                        <div class="rt-banner-searchbox trip-search">
+                            <div class="rt-input-group">
+
+
+                                <div class="single-input  col-md-9">
+                                    <input type="text" class="form-control" name="recherche" placeholder="Restaurants">
+
+                                </div><!-- /.single-input -->
+                                <div class="single-input  col-md-3">
+                                    <input type="submit"value="Search"  class="rt-btn rt-gradient pill text-uppercase d-block rt-Bshadow-2">
+                                </div><!-- /.single-input -->
+
+                            </div><!-- /.rt-input-group -->
+                        </div><!-- /.rt-banner-searchbox -->
+                        </form>
+
+
+
+
+
+
+
+
+
+                    </div><!-- /.col-lg-10 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div>
+    </div><!-- /.rt-bredcump -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="spacer-bottom"></div><!-- /.spacer-bottom -->
+    <section class="content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mx-auto col-md-7 mb-5 mb-lg-0">
+                    <div class="rt-sidebar-group">
+                        <div class="rt-widget widget_rating">
+                            <h3 class="rt-widget-title">
+                                Star Rating
+                            </h3><!-- /.rt-widget-title -->
+                            <ul>
+                                <li class="clearfix">
+
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="trip_gridCheckrt-1xs">
+                                        <label class="form-check-label" for="trip_gridCheckrt-1xs">
+                    <span>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+
+                    </span>
+                                        </label>
+                                    </div><!-- ./orm-group -->
+
+                                </li>
+                                <li class="clearfix">
+
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="trip_gridCheckrt-2xs">
+                                        <label class="form-check-label" for="trip_gridCheckrt-2xs">
+                    <span>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                    </span>
+                                        </label>
+                                    </div><!-- ./orm-group -->
+
+                                </li>
+                                <li class="clearfix">
+
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="trip_gridCheckrt-2xss">
+                                        <label class="form-check-label" for="trip_gridCheckrt-2xss">
+                    <span>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                    </span>
+                                        </label>
+                                    </div><!-- ./orm-group -->
+
+                                </li>
+                                <li class="clearfix">
+
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="trip_gridCheckrt-2xssa">
+                                        <label class="form-check-label" for="trip_gridCheckrt-2xssa">
+                    <span>
+                        <i class="icofont-star review"></i>
+                        <i class="icofont-star review"></i>
+                    </span>
+                                        </label>
+                                    </div><!-- ./orm-group -->
+
+                                </li>
+                            </ul>
+                        </div><!-- /.rt-widget -->
+
+
+                        <div class="rt-widget widget_tag">
+                            <h3 class="rt-widget-title">
+                                Ville
+                            </h3><!-- /.rt-widget-title -->
+                            <a href="#" class="rt-tag-cloud d-block text-333"><span class="rt-mr-4"><i class="icofont-tag"></i></span> Cycling</a>
+                            <a href="#" class="rt-tag-cloud d-block text-333"><span class="rt-mr-4"><i class="icofont-tag"></i></span> City Tour</a>
+                            <a href="#" class="rt-tag-cloud d-block text-333"><span class="rt-mr-4"><i class="icofont-tag"></i></span> Meet the Locals</a>
+                            <a href="#" class="rt-tag-cloud d-block text-333"><span class="rt-mr-4"><i class="icofont-tag"></i></span> Train</a>
+                            <a href="#" class="rt-tag-cloud d-block text-333"><span class="rt-mr-4"><i class="icofont-tag"></i></span> Car with driver</a>
+                        </div><!-- /.rt-widget -->
+
+                    </div><!-- /.rt-sidebar-group -->
+                </div><!-- /.col-lg-3 -->
+                <div class="col-lg-9">
+
+                    <div class="box-style__1 rt-mb-30">
+                        <form action="#" class="row">
+                            <div class="col-lg-3 col-md-6 mb-3 mb-lg-0">
+                                <a href="MesReservationPlat" class="rt-btn rt-gradient3 rt-sm2 text-uppercase pill">Mes Reservations</a>
+                            </div><!-- /.col-lg-4 -->
+
+                        </form>
+                    </div><!-- /.flight-list-box -->
+                    {% for i in restaurants %}
+                    <div class="box-style__1 rt-mb-30">
+                        <div class="hotel-inner-content row">
+                            <div class="hotel-thumb col-md-3  mb-5 mb-md-0">
+                                <div class="hotel-bg rtbgprefix-cover" style="background-image: url('/upload/img/{{ i.photo }}')"></div>
+
+                            </div><!-- /.hotel-thumb -->
+
+                            <div class="hotel-text col-md-9">
+                                <div class="top">
+                                    <h5>{{ i.nom }}
+                                        <span> </span></h5>
+                                    <p>{{ i.nom }} <span> - {{ i.type }}</span></p>
+                                </div><!-- /.top -->
+                                <div class="middle-text d-md-flex justify-content-md-between rt-mt-20">
+                                    <div class="left_column">
+                                        <span class="primary-color">Note:</span>
+                                        <span class="badge rt-gradinet-badge pill rt-mr-10">{{ i.note }}<small>/5</small></span>
+                                       <!-- <span class="primary-color">Excellent</span>
+                                        <span class="f-size-12 text-878">( 86 Reviews )</span>
+                                        <span class="text-555 f-size-16 d-block rt-mt-15"><span class="rt-mr-15"><i class="icofont-users-alt-5 primary-color rt-mr-4"></i>Family Trip</span> <span> <i class="icofont-user primary-color rt-mr-4"></i>Private Tour</span></span> -->
+                                    </div><!-- /.left- -->
+                                    <div class="right_column text-left text-md-right">
+
+
+                                    </div><!-- /.right -->
+                                </div><!-- /.middle-text -->
+                                <div class="footer-elements d-flex justify-content-between align-items-center align-items-end">
+                                    <div class="left">
+
+                                    </div><!-- /.left -->
+                                    <div class="right">
+                                        <a href="{{ path('detailRest',{'id': i.id_resto }) }}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase">View Details</a>
+                                    </div><!-- /.right -->
+                                </div><!-- /.footer-elements -->
+                            </div><!-- /.hotel-text -->
+
+                        </div><!-- /.hotel-inner-content -->
+                    </div><!-- /.hotel-list-box -->
+                    {% endfor %}
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination  justify-content-center">
+                            {{ knp_pagination_render(restaurants) }}
+
+
+                        </ul>
+                    </nav>
+
+
+
+                </div><!-- /.col-lg-9 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section>
+
+    <!--
+        !============= Footer Area Start ===========!
+     -->
+
+
+{% endblock %}

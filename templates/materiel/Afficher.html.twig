@@ -1,0 +1,326 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<!-- Modal -->
+<div class="modal fade" id="rtmodal-1" tabindex="-1" role="dialog" aria-labelledby="rtmodal-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered rt-lgoinmodal " role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="rt-modal-headr rt-mb-20 one">
+                    <img src="front/assets/images/logo/Logo-icon.png" alt="modal logo" draggable="false">
+                    <h4>Login in to Emigrar</h4>
+                    <p>Log in to get in the moment updates on the things
+                        that interest you.</p>
+                </div><!-- /.rt-modal-headr -->
+                <div class="rt-modal-headr rt-mb-20 two">
+                    <img src="front/assets/images/logo/Logo-icon.png" alt="modal logo" draggable="false">
+                    <h4>Create your Account</h4>
+                    <p>Log in to get in the moment updates on the things
+                        that interest you.</p>
+                </div><!-- /.rt-modal-headr -->
+                <div class="rt-modal-input one">
+                    <form action="#" class="rt-form">
+                        <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
+                        <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
+                        <div class="form-group forgot-pass">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheckss">
+                                <label class="form-check-label" for="gridCheckss">
+                                    Remember Password
+                                </label>
+                            </div><!-- ./orm-group -->
+                        </div>
+                        <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
+                    </form>
+                    <div class="ac-register">
+                        <span>Don’t have an account? <a href="#" class="open-creatac">Sign Up Now <i class="icofont-double-right"></i></a></span>
+                    </div><!-- /.ac-register -->
+                </div><!-- /.rt-modal-input -->
+                <div class="rt-modal-input two">
+                    <form action="#" class="rt-form">
+                        <input type="text" class="form-control pill rt-mb-15" placeholder="User name">
+                        <input type="password" class="form-control pill rt-mb-15" placeholder="Enter your mail address">
+                        <input type="password" class="form-control pill rt-mb-15" placeholder="Password">
+                        <div class="form-group forgot-pass">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck333">
+                                <label class="form-check-label" for="gridCheck333">
+                                    I'd like to hear about promos, new products,and much more!
+                                </label>
+                            </div><!-- ./orm-group -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck222">
+                                <label class="form-check-label" for="gridCheck222">
+                                    By clicking "Sign up" you agree to our Terms of Service and Privacy Policy
+                                </label>
+                            </div><!-- ./orm-group -->
+                        </div>
+                        <input type="submit" class="rt-btn rt-gradient pill d-block text-uppercase " value="Log In">
+                    </form>
+                    <div class="ac-register">
+                        <span>Already have an account?<a href="#">LOGIN <i class="icofont-double-right"></i></a></span>
+
+                    </div><!-- /.ac-register -->
+                </div><!-- /.rt-modal-input -->
+                <div class="rt-modal-footer">
+                    <span>Or</span>
+                    <h4>Sign Up with social media</h4>
+                    <ul class="rt-social rt-circle-style2">
+
+                        <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                        <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                        <li><a href="#"><i class="icofont-linkedin"></i></a></li>
+                    </ul>
+                </div><!-- /.rt-modal-footer -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+    ====== Services Start ==============
+ -->
+<div class="rt-breadcump rt-breadcump-height">
+    <div class="rt-page-bg rtbgprefix-cover" style="background-image: url(front/assets/images/backgrounds/bredcump.png)">
+    </div><!-- /.rt-page-bg -->
+    <div class="container">
+        <div class="row rt-breadcump-height">
+            <div class="col-12">
+                <div class="breadcrumbs-content">
+                    <h3>Our Services</h3>
+                    <div class="breadcrumbs">
+                        <span class="divider"><i class="icofont-home"></i></span>
+                        <a href="#" title="Home">Home</a>
+                        <span class="divider"><i class="icofont-simple-right"></i></span>
+                        <a href="#" title="Home">Services</a>
+
+
+                    </div><!-- /.breadcrumbs -->
+                </div><!-- /.breadcrumbs-content -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</div><!-- /.rt-bredcump -->
+
+
+<!--
+    ====== Services Start ==============
+ -->
+
+<div class="m-portlet__body">
+    <!--begin::Section-->
+
+    <div>
+        {{ form(form) }}
+
+    </div>
+    <a href="{{ path('ajoutM') }}">ajouter</a>
+
+
+    <div class="m-section">
+        <div class="m-section__content">
+            <table class="table m-table m-table--head-bg-success">
+                <thead>
+                <tr>
+                    <th>
+                        id
+                    </th>
+                    <th>
+                        nom materiel
+                    </th>
+
+                    <th>
+                        description materiel
+                    </th>
+
+                    <th>
+                        prix materiel
+                    </th>
+
+                    <th>
+                        photo materiel
+                    </th>
+
+
+                    <th>
+                        location
+                    </th>
+
+                    <th>
+                        action
+
+                    </th>
+
+
+
+                </tr>
+                </thead>
+
+                {% for U in materiel%}
+
+                <tr>
+                    <td>
+
+                        {{ U.id }}
+                    </td>
+                    <td>
+                        {{ U.nommateriel }}
+                    </td>
+                    <td>
+                        {{ U.descriptionmateriel}}
+                    </td>
+                    <td>
+                        {{ U.prixmateriel }}
+                    </td>
+                    <td>
+                        {{ U.photomateriel }}
+                    </td>
+                    <td>
+                        {{ U.location }}
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger">
+                            <a href="{{ path('updateM',{'id':U.id}) }}">
+                                modifier
+                            </a>
+                        </button>
+                    </td>
+
+                    <td>
+                        <button type="button" class="btn btn-danger">
+                            <a href="{{ path('deleteM',{'id':U.id}) }}">
+                                delete
+                            </a>
+                        </button>
+                    </td>
+                    {% endfor %}
+                    <form method="POST">
+                        <div class="form-group">
+
+                            <div class="input-group-append">
+                                <button class="btn btn-sm btn-primary" type="submit"value="Search" type="button">Tri</button>
+                            </div>
+
+
+                        </div>
+                    </form>
+                    </tbody>
+                </tr>
+                </td>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+<!--
+    ====== Works Start ==============
+ -->
+
+<div class="spacer-bottom">
+    {{ knp_pagination_render(materiel) }}
+</div><!-- /.spacer-bottom -->
+<section class="works3-area">
+    <div class="rt-inner-overlay"></div><!-- /.rt-overlay -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="rt-section-title-wrapper">
+                    <h3>How we do it</h3>
+                </div><!-- /.rt-section-title-wrapper -->
+                <div class="rt-box-style-1">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="rt-single-icon-box icon-center text-center justify-content-center wow fade-in-bottom">
+                                <div class="icon-thumb">
+                                    <img src="front/assets/images/icons-image/box-icon-11.png" alt="box-icon" draggable="false">
+                                </div><!-- /.icon-thumb -->
+                                <div class="iconbox-content">
+                                    <h5>Technology</h5>
+                                    <p>In-house tools covering profile
+                                        management, reporting and more</p>
+                                </div><!-- /.iconbox-content -->
+                            </div><!-- /.rt-single-icon-box -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="rt-single-icon-box icon-center text-center justify-content-center wow fade-in-bottom" data-wow-duration="1s">
+                                <div class="icon-thumb">
+                                    <img src="front/assets/images/icons-image/box-icon-12.png" alt="box-icon" draggable="false">
+                                </div><!-- /.icon-thumb -->
+                                <div class="iconbox-content">
+                                    <h5>Global Agency</h5>
+                                    <p>100+ trusted, reputable local agencies
+                                        in 72 markets on 6 continents</p>
+                                </div><!-- /.iconbox-content -->
+                            </div><!-- /.rt-single-icon-box -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="rt-single-icon-box icon-center text-center justify-content-center wow fade-in-bottom" data-wow-duration="1.5s">
+                                <div class="icon-thumb">
+                                    <img src="front/assets/images/icons-image/box-icon-13.png" alt="box-icon" draggable="false">
+                                </div><!-- /.icon-thumb -->
+                                <div class="iconbox-content">
+                                    <h5>Leadership Team</h5>
+                                    <p>Passionate about business travel, with decades of multi-industry experience</p>
+                                </div><!-- /.iconbox-content -->
+                            </div><!-- /.rt-single-icon-box -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-12 text-center">
+                            <a href="#" class="rt-btn rt-gradient rt-Bshadow-2 rt-rounded rt-sm text-uppercase">Find Out More</a>
+                        </div><!-- /.col-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.rt-box-style-1 -->
+            </div><!-- /.col-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+
+<!--
+    ======About Area Start ==============
+ -->
+<div class="spacer-top"></div><!-- /.spacer-top -->
+<section class="about-area2">
+    <div class="rt-design-elmnts  rtbgprefix-contain" style="background-image: url(front/assets/images/all-img/abt_vec_3.png)">
+    </div><!-- /.rt-design-elmnts -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="rt-section-title-wrapper">
+                    <h2 class="rt-section-title">
+                        <span>Extraordinary experiences,</span>
+                        Designed Just for you
+                    </h2><!-- /.rt-section-title -->
+                    <p>
+                        At Emigrar, we excel at helping you get your vacation planned. Not just any vacation, but exceptional
+                        vacations filled with inspiring and life-enriching experiences. <br>
+                        Our approach is different. We don’t plan any trips ourselves. Instead, we match you with 2 or 3 leading travel
+                        specialists who are the most qualified to make your dream trip happen. They then compete to design your ideal itinerary.
+                    </p>
+                </div><!-- /.rt-section-title-wrapper -->
+                <div class="section-title-spacer"></div><!-- /.section-title-spacer -->
+                <a href="#" class="rt-btn rt-primary rt-rounded">Get Matched to Travel Specialists</a>
+            </div><!-- /.col-lg-9 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section>
+
+{% endblock %}
+
+
+
+
+
+
+
+

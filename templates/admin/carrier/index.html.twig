@@ -1,0 +1,53 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Product Table</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Nom Transoprteur</th>
+                                            <th>description</th>
+                                            <th>prix</th>
+
+                                            <th>modifier</th>
+                                            <th>supprimer</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr {% for c in carrier %}>
+                                            <td>{{ c.id }}</td>
+                                            <td>{{ c.name }}</td>
+                                            <td>{{ c.description }}</td>
+                                            <td>{{ c.prix }} </td>
+
+                                            <td><a href="{{ path('updateT',{'id': c.id }) }}">modifier</a> </td>
+
+                                            <td><a href="{{ path('deleteT',{'id': c.id }) }}">Delete</a> </td>
+
+                                        </tr {% endfor %}>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

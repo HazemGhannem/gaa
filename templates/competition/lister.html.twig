@@ -1,0 +1,42 @@
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Categorie</th>
+            <th>Nombre de places</th>
+            <th>Image</th>
+            <th>Adresse</th>
+            <th>date compétition</th>
+            <th>ACTIONS</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for comp in competitions %}
+            <tr>
+                <td>{{ comp.nom }}</td>
+                <td>{{ comp.description }}</td>
+                <td>{{ comp.category }}</td>
+                <td>{{ comp.nombreDePlace }}</td>
+                <td>
+                    <img src={{ comp.image}} style="height:70px;width:70px;" />
+                </td>
+
+                <td>{{ comp.adresse }}</td>
+
+                <td>{{ comp.date|date('d-m-Y') }}</td>
+                <td>
+                    <label class="badge badge-warning">
+                        <a href={{ path("modifCompetition", {'idComp': comp.id }) }} style="text-decoration:none;color:#fff;">MODIFIER</a>
+                    </label>
+
+                    <label class="badge badge-danger">
+                        <a href={{ path("suppCompetition", { 'idComp': comp.id }) }} style="text-decoration:none;color:#fff;">SUPPRIMER</a>
+                    </label>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

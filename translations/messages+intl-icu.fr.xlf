@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="lto9.2i" resname="Event added successfully">
+        <source>Event added successfully</source>
+        <target>Événement ajouté avec succés!</target>
+      </trans-unit>
+      <trans-unit id="y1X.jj2" resname="ID of the event">
+        <source>ID of the event</source>
+        <target>Identifiant de l'événement</target>
+      </trans-unit>
+      <trans-unit id="m29mBSg" resname="ID of the organizer">
+        <source>ID of the organizer</source>
+        <target>Identifiant de l'organisateur</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="gWlpMQG" resname="Start date">
+        <source>Start date</source>
+        <target>Date début</target>
+      </trans-unit>
+      <trans-unit id="FDA6oMS" resname="End date">
+        <source>End date</source>
+        <target>Date fin </target>
+      </trans-unit>
+      <trans-unit id="8AY7gIc" resname="Hour">
+        <source>Hour</source>
+        <target>Heure</target>
+      </trans-unit>
+      <trans-unit id=".DP3Mkb" resname="City">
+        <source>City</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="Vu_PIJV" resname="Address">
+        <source>Address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="2E7rrak" resname="Photo">
+        <source>Photo</source>
+        <target>Photo</target>
+      </trans-unit>
+      <trans-unit id="YHBpsMa" resname="Number of views">
+        <source>Number of views</source>
+        <target>Nombre de vus</target>
+      </trans-unit>
+      <trans-unit id="R4MDo2X" resname="Number of participants">
+        <source>Number of participants</source>
+        <target>Nombre de participants</target>
+      </trans-unit>
+      <trans-unit id="CGLZ9A3" resname="Maximal number of participants">
+        <source>Maximal number of participants</source>
+        <target>Nombre maximale de participants</target>
+      </trans-unit>
+      <trans-unit id="wcEAnT8" resname="Update">
+        <source>Update</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="h7QuQMK" resname="Approved">
+        <source>Approved</source>
+        <target>Approuvé</target>
+      </trans-unit>
+      <trans-unit id="n9coxmy" resname="Add">
+        <source>Add</source>
+        <target>Ajouter</target>
+      </trans-unit>
+      <trans-unit id="YE3ORF4" resname="Services">
+        <source>Services</source>
+        <target>Services</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="5yt3GPi" resname="Add an event">
+        <source>Add an event</source>
+        <target>Ajouter un événement</target>
+      </trans-unit>
+      <trans-unit id="z9yTrCj" resname="Hote Mode">
+        <source>Hote Mode</source>
+        <target>Mode Hote </target>
+      </trans-unit>
+      <trans-unit id=".yi.DHo" resname="Subscribe | Sign in">
+        <source>Subscribe | Sign in</source>
+        <target>S'inscrire | Se connecter</target>
+      </trans-unit>
+      <trans-unit id="BdkUV16" resname="Rbnb">
+        <source>Rbnb</source>
+        <target>Hébérgement</target>
+      </trans-unit>
+      <trans-unit id="jRT25y3" resname="Events">
+        <source>Events</source>
+        <target>Événement</target>
+      </trans-unit>
+      <trans-unit id="uCmXDvQ" resname="Competitions">
+        <source>Competitions</source>
+        <target>Competitions</target>
+      </trans-unit>
+      <trans-unit id="8CaMuRA" resname="Rent">
+        <source>Rent</source>
+        <target>Location</target>
+      </trans-unit>
+      <trans-unit id="R6rzG4P" resname="Contact us">
+        <source>Contact us</source>
+        <target>Contactez-nous</target>
+      </trans-unit>
+      <trans-unit id="VlH67pY" resname="Create an event">
+        <source>Create an event</source>
+        <target>Créer un événement</target>
+      </trans-unit>
+      <trans-unit id="zI.Z63_" resname="Welcome!">
+        <source>Welcome!</source>
+        <target>Bienvenue!</target>
+      </trans-unit>
+      <trans-unit id="k_vA5_3" resname="Create an event on our platform and get in touch with a big number of tourists and locals!">
+        <source>Create an event on our platform and get in touch with a big number of tourists and locals!</source>
+        <target>Créer votre événement sur notre platforme pour toucher le plus grand nombre de tunisiens et de touristes!</target>
+      </trans-unit>
+      <trans-unit id="669zNF7" resname="Enter details">
+        <source>Enter details</source>
+        <target>Entrez les détails</target>
+      </trans-unit>
+      <trans-unit id="JBkykGe" resname="search">
+        <source>search</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="SPAgaHi" resname="Send your mail to the admin!">
+        <source>Send your mail to the admin!</source>
+        <target>Envoyez votre mail!</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="cZiMTY4" resname="Text">
+        <source>Text</source>
+        <target>Texte</target>
+      </trans-unit>
+      <trans-unit id="9vRoj.I" resname="Send">
+        <source>Send</source>
+        <target>Envoyer</target>
+      </trans-unit>
+      <trans-unit id="3G7EUX2" resname="Read more...">
+        <source>Read more...</source>
+        <target>Lire plus...</target>
+      </trans-unit>
+      <trans-unit id="3NmaSrX" resname="Participat">
+        <source>Participate</source>
+        <target>Participer</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="rt-breadcump rt-breadcump-height">
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url('{{ asset('front/assets/images/backgrounds/bredcump.png') }}')">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+
+                        <h3>Evenement</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="#" title="Home">Home</a> / <a href="{{ path('AfficheParticipations') }}">Participation</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            ---------
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+
+    <section class="content-area">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="card-description">
+                        <br>
+                    <form method="POST">
+                        <div class="rt-banner-searchbox trip-search">
+                            <div class="rt-input-group">
+
+
+                                <div class="single-input  col-md-9">
+                                    <input type="text" class="form-control" name="recherche" placeholder="{% trans %}Events{% endtrans %}">
+
+                                </div><!-- /.single-input -->
+                                <div class="single-input  col-md-3">
+                                    <input type="submit"value="{% trans %}search{% endtrans %}"  class="rt-btn rt-gradient pill text-uppercase d-block rt-Bshadow-2">
+                                </div><!-- /.single-input -->
+
+                            </div><!-- /.rt-input-group -->
+                        </div><!-- /.rt-banner-searchbox --><br>
+                        <a href="{{ path ('ajoutE') }}">
+                           <br>
+                            <a href="{{ path ('ajoutE') }}">
+                                <button type="button" class="btn btn-secondary btn-lg btn-block">{% trans %}Add an event    {% endtrans %}</button>
+                            </a>
+                        </a>
+                        </p>
+
+                        {% for message in app.flashes('info') %}
+                            <div class="alert alert-success">{{ message }}</div>
+                        {% endfor %}
+
+
+                        <div class="table-responsive" width="10%">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>{% trans %}Photo{% endtrans %}</th>
+                                    <th>{% trans %}Title{% endtrans %}</th>
+                                    <th>{% trans %}Start date{% endtrans %}</th>
+
+                                    <th>{% trans %}Hour{% endtrans %}</th>
+                                    <th>{% trans %}City{% endtrans %}</th>
+
+                                    <th>{% trans %}        Approved
+                                        {% endtrans %}</th>
+
+                                    <th>{% trans %}Update{% endtrans %}</th>
+                                    <th>{% trans %}Delete{% endtrans %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr {% for e in evenement %}>
+                                <tr {% if e.approuver==1 %}>
+                                    <td>
+
+                                        <a href="{{ path('AfficheUnE',{'id': e.idEvenement}) }}">
+                                            <img src="{{ asset('/picture/'~e.photo) }}" alt="  {{ e.photo }}" width="130" height="130"></a></a></td>
+                                    <td>{{ e.titre }}</td>
+                                    <td>{{ e.dateDebut | date("m/d/Y")}}</td>
+                                    <td>{{ e.heure }}</td>
+                                    <td>{{ e.ville }}</td>
+
+
+                                    <td>{{ e.approuver }}</td>
+                                    <td><a href="{{ path('modifierEadmin',{'id': e.idEvenement}) }}">
+                                            <button type="button" class="btn btn-outline-warning"><font size="3pt">{% trans %}Update{% endtrans %}</font></button></a></td>
+                                    <td><a href="{{ path('supprimerE',{'id': e.idEvenement}) }}">
+                                            <button type="button" class="btn btn-outline-danger"><font size="3pt">{% trans %}Delete{% endtrans %}</font></button></a></td>
+                                </tr{% endif %}>           </tr {% endfor %}>
+
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div></section>
+
+
+
+
+{% endblock %}
+

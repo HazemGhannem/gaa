@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="rt-breadcump rt-breadcump-height">
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url('{{ asset('front/assets/images/backgrounds/bredcump.png') }}')">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>Bienvenue à notre boutique</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="#" title="Home">Home</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            Notre Produit => {{ produit.name }}
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/upload/img/{{ produit.image }}" alt="{{ produit.name }}" class="img-fluid">
+        </div>
+        <div class="col-md-8 my-auto" >
+            <h3>{{ produit.name }}</h3>
+            <p>{{ produit.subtitle }}</p>
+            <span class="product-page-price">{{ produit.prix }}</span>
+            <hr>
+            <p>{{ produit.description }}</p>
+            <a href="{{ path('add_to_cart', {'id' : produit.id } ) }}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10">Ajouter au panier</a>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+

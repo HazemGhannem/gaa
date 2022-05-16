@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier - TUNEASY!{% endblock %}
+
+{% block body %}
+    <div class="rt-breadcump rt-breadcump-height"> )
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url('{{ asset('front/assets/images/backgrounds/bredcump.png') }}')">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>Mon panier</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="#" title="Home">Home</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            Retrouvez l'ensemble des produits que vous avez ajouté au panier .
+                            <hr>
+
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+    {% if (app.user) %}
+
+    <div class="rt-widget widget_plane_time">
+{% if (cart|length > 0) %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Produit</th>
+                <th scope="col"></th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set total = null %}
+
+                {% for product in cart %}
+                    <tr>
+                <th><img src="upload/img/{{ product.produit.image }}" height="75px"></th>
+                        <th> {{ product.produit.name}}<br>
+                         <small> {{ product.produit.subtitle }}</small>
+
+                        </th>
+                <td>    <a href="{{ path('decrease_to_cart', {'id' : product.produit.id }) }}">  <img src="{{ asset('front/assets/minus-sign.png') }}" height="12px" ></a>
+
+                    {{ product.quantity }}
+                    <a href="{{ path('add_to_cart' , {'id' : product.produit.id }) }}"> <img src="{{ asset('front/assets/add.png') }}" height="12px" ></a>
+
+                </td>
+                <td>{{ product.produit.prix }} €</td>
+                <td>{{ (product.produit.prix * product.quantity) }} € </td>
+                        <td><a href="{{ path('delete_to_cart',{'id' : product.produit.id }) }}" ><img src="{{ asset('front/assets/delete.png') }}" height="22px"></a></td>
+                    </tr>
+                    {% set total = total + (product.produit.prix * product.quantity)%}
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+
+        <div class="text-right mb-5">
+            <b>Nombre de produit :  </b>{{ cart|length }}<br>
+            <b>Total de mon panier : </b>{{ total }} €
+        </div>
+    <div class="text-right">
+        <a href="{{ path('order') }}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10">Valider Mon panier</a>
+
+    </div>
+
+
+
+    </div><!-- /.rt-widget -->
+    {% else %}
+    <hr>
+        <center>  <p><b>Votre panier est vide</b></p></center>
+
+    {% endif %}
+    {% else  %}
+    <hr>
+    <center>  <p><b>Vous n'etes pas connecter <a href="{{ path('app_login') }}" class="rt-btn rt-gradient pill rt-sm3 text-uppercase rt-mt-10">connecter</a></b></p></center>
+
+
+    {% endif  %}
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="rt-breadcump rt-breadcump-height"> )
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url('{{ asset('front/assets/images/backgrounds/bredcump.png') }}')">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>Bienvenue à notre boutique</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="#" title="Home">Home</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            Nos Produits
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+    <section class="row">
+        <div class="col-md-3 rt-widget widget_plane_time">
+
+                <div class="form-check-inline">
+                    {{ form(form) }}
+
+                </div><!-- ./orm-group -->
+
+
+
+            <ul>
+
+                <li class="clearfix">
+
+
+
+
+                </li>
+            </ul>
+        </div><!-- /.rt-widget -->
+        <div class="col-md-9">
+            <div class="row product-container">
+
+                {% for p in product %}
+                    <div class="col-md-4">
+                        <div class="product-item text-center" >
+                            <a href="{{ path('product', {'id' : p.id }) }}" >  <img src="/upload/img/{{ p.image }}" alt="" class="img-fluid"></a>
+                            <span class="product-subtitle">{{ p.name }}</span> <br
+
+                            <span class="product-subtitle">{{ p.subtitle }}</span> <br>
+                            <span class="product-prix"> {{ p.prix }} €</span> <br>
+
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div><!-- /.container -->
+        </div>
+
+    </section>
+
+
+
+{% endblock %}
+

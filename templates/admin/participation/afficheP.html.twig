@@ -1,0 +1,52 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Product Table</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>{% trans %}ID participation{% endtrans %}</th>
+                                            <th>{% trans %}ID événement{% endtrans %}</th>
+                                            <th>{% trans %}ID participant{% endtrans %}</th>
+
+
+                                            <th>{% trans %}Update{% endtrans %}</th>
+                                            <th>{% trans %}Delete{% endtrans %}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr {% for p in participation %} >
+
+                                            <td>{{ p.idParticipation }}</td>
+                                            <td>{{ p.idEvenement }}</td>
+
+
+                                            <td>{{ p.idParticipant }}</td>
+                                            <td><a href="{{ path('modifierPadmin',{'id': p.idParticipation}) }}">
+                                                    <button type="button" class="btn btn-outline-warning"><font size="3pt">{% trans %}Update{% endtrans %}</font></button></a></td>
+                                            <td><a href={{ path('delete_participationadmin', {'id': p.idParticipation}) }}>
+                                                    <button type="button" class="btn btn-outline-danger"><font size="3pt">{% trans %}Delete{% endtrans %}</font></button></a></td>
+                                        </tr {% endfor %}></tbody></table>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

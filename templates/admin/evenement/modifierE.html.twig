@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+{% block body %}
+
+
+    <center>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary btn-block" href="{{ path('admin_afficherE')}}" >{% trans %}Update{% endtrans %}</button>
+        {{ form_end(form) }}
+
+
+    </center>
+{% endblock %}

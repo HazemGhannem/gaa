@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="rt-breadcump rt-breadcump-height">
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url('{{ asset('front/assets/images/backgrounds/bredcump.png') }}')">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>Event info</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="#" title="Home">Home</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            ---------
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+
+
+    <section class="content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto mx-lg-0">
+                    <div class="flight-list-box rt-mb-30 pt-30">
+                        <h4 class="f-size-24 text-capitalize rt-mb-30  rt-semiblod">Event Info</h4>
+
+
+                       <br><br>
+                        <form action="#" class="rt-form rt-line-form flight-lable">
+                            <div class="row">
+                                <div class="col-md-6 rt-mb-30 ">
+                                    <label>{% trans %}ID of the event{% endtrans %}</label>
+                                    {{ e.idEvenement }}
+
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6 rt-mb-30">
+
+                                    <label>{% trans %}ID of the organizer{% endtrans %}</label>
+                                    {{ e.idOrganisateur }}
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Title{% endtrans %}</label>
+                                    {{ e.titre }}
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Start date{% endtrans %}</label>
+                                    {{ e.dateDebut | date("m/d/Y")}}
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}End date{% endtrans %}</label>
+                                    {{ e.dateFin | date("m/d/Y")}}
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Hour{% endtrans %}</label>
+                                    {{ e.heure }}
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}City{% endtrans %}</label>
+                                    {{ e.ville }}
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Address{% endtrans %}</label>
+                                    {{ e.adresse }}
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Description{% endtrans %}</label>
+                                    {{ e.description }}
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Photo{% endtrans %}</label>
+                                    <a > <img src="{{ asset('picture/'~e.photo) }}" alt="  {{ e.photo }}" width="150" height="150"></a>
+
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Approved{% endtrans %}</label>
+                                    {{ e.approuver }}
+
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Number of views{% endtrans %}</label>
+                                    {{ e.nombreVus }}
+
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Number of participants{% endtrans %}</label>
+                                    {{ e.nombreParticipants }}
+
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Maximal number of participants{% endtrans %}</label>
+                                    {{ e.nombreMax }}
+
+
+                                </div>
+                                <div class="col-lg-6 rt-mb-30">
+
+                                    <label>{% trans %}Maximal number of participants{% endtrans %}</label>
+                                    {{ e.nombreMax }}
+                                </div>
+
+
+                                <div id="mapid"></div>
+
+                                <!--js openstreetmap-->
+                                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                                        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                                        crossorigin=""></script>
+                                <!--js openstreetmap-->
+                                <script>
+                                    var villes = {
+
+                                        "Bizerte": { "lat": 37.2720905, "lon": 9.8708565 },
+                                        "Sousse": { "lat": 35.8288175, "lon": 10.6405392 },
+                                        "Tataouine": { "lat": 31.7317009, "lon": 9.7702197 },
+                                        "Tunis": { "lat": 36.84747704321433, "lon": 10.218575171103218 }
+                                    };
+                                    var tableauMarqueurs = [];
+                                    var mymap = L.map('mapid').setView([36.84747704321433, 10.218575171103218], 13);
+                                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                                        // Il est toujours bien de laisser le lien vers la source des données
+                                        attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                                        minZoom: 1,
+                                        maxZoom: 20
+                                    }).addTo(mymap);
+                                    for (ville in villes) {
+
+                                        var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(mymap);
+                                        // Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
+
+                                        marker.bindPopup("<b>Welcome!</b><br>"+ ville).openPopup();
+                                        tableauMarqueurs.push(marker);
+                                    }
+                                    var groupe= new L.featureGroup(tableauMarqueurs);
+                                    mymap.fitBounds(groupe.getBounds().pad(0.2));</script>
+
+                            </div>
+
+                    </div><!-- /.row --></form></div></div></div></div></section>
+
+{% endblock %}
+

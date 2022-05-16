@@ -1,0 +1,47 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Category Table</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>NAME</th>
+                                            <th>modifier</th>
+                                            <th>supprimer</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr {% for c in category %}>
+                                                <td>{{ c.id }}</td>
+                                                <td>{{ c.name }}</td>
+                                                <td><a href="{{ path('updateC',{'id': c.id }) }}">modifier</a> </td>
+
+                                                <td><a href="{{ path('deleteC',{'id': c.id }) }}">Delete</a> </td>
+
+                                            </tr {% endfor %}>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

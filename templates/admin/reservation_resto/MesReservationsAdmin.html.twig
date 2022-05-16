@@ -1,0 +1,171 @@
+{% extends 'admin/base.html.twig' %}
+ {% block title %} <title>Reservation Admin</title> {% endblock %}
+{% block css %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Skydash Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../vendors/feather/feather.css">
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+
+{% endblock %}
+
+
+{% block body %}
+         <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Tri par date reservation :</h4>
+                                <form method="POST">
+                                <div class="form-group">
+
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary" type="submit"value="Search" type="button">Tri</button>
+                                        </div>
+
+
+                                </div>
+                                </form>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        .centerbtnAMD {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                        }
+                    </style>
+
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card" >
+                            <div class="card-body" >
+                                <h4 class="card-title">Statistique :</h4>
+                                <div class="centerbtnAMD" >
+                                    <div>
+                                        <button onclick="document.location='statistiques'" type="button" class="btn btn-dark btn-icon-text">
+                                            <i class="ti-stats-up btn-icon-append"></i>
+                                            Statistique
+
+                                        </button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Listes Des Reservations</h4>
+                                <p class="card-description">
+
+                                </p>
+                                <div class="table-responsive pt-3">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>Id_res</th>
+
+
+                                            <th>Id_client</th>
+                                            <th>Id_plat</th>
+                                            <th>Quantity</th>
+                                            <th>DateReservation</th>
+
+                                            <th>Delete</th>
+                                            <th>Email</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in reservations %}
+                                        <tr>
+                                            <td>{{ i.id_resPlat }}</td>
+                                            <td>{{ i.clientId }}</td>
+                                            <td>{{ i.platId }}</td>
+                                            <td>{{ i.Quantity }}</td>
+                                            <td>{{ i.dateReservation|date }}</td>
+
+                                            <td><a class="btn btn-danger btn-icon-text" href={{ path('deleteAdminReser',{'id': i.id_resPlat}) }}><i class="mdi mdi-delete btn-icon-prepend"></i> </a> </td>
+                                            {% if i.etat == false %}
+                                            <td><a class="btn btn-success btn-icon-text" href={{ path('ComfirmationReservation',{'id': i.id_resPlat}) }}><i class="ti-upload btn-icon-prepend"></i> </a> </td>
+
+                                            {% else %}
+                                                <td>Validee</td>
+                                            {% endif %}
+
+                                        </tr>
+                                        {% endfor %}
+
+
+
+                                        </tbody>
+                                    </table>
+                                    {{ knp_pagination_render(reservations) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:../../partials/_footer.html -->
+            <footer class="footer">
+                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                    <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+                </div>
+            </footer>
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+{% endblock %}
+
+{% block JS %}
+    <!-- plugins:js -->
+    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="../../vendors/select2/select2.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../../js/select2.js"></script>
+    <!-- End custom js for this page-->
+{% endblock %}

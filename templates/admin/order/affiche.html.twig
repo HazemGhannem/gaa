@@ -1,0 +1,63 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">commande Table</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Nom client</th>
+                                            <th>Prenom Client</th>
+                                            <th>Date </th>
+                                            <th>transporteur</th>
+                                            <th>prix</th>
+                                            <th>Adresse de livraison</th>
+
+                                            
+
+
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr {% for p in order %}>
+                                            <td>{{ p.id }}</td>
+                                            <td>{{ p.user.firstname }}</td>
+                                            <td>{{ p.user.lastname }}</td>
+                                            <td>{{ p.createdAt|date("m/d/Y") }}</td>
+
+
+                                            <td>{{ p.carrierName }}</td>
+                                            <td>{{ p.CarrierPrice }}</td>
+                                            <td>{{ p.delivery }}</td>
+
+
+
+
+                                        </tr {% endfor %}>
+
+
+                                        </tbody>
+                                    </table>
+                                    {{ knp_pagination_render(order) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

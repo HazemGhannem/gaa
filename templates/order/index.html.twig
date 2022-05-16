@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider Ma commande{% endblock %}
+
+{% block body %}
+    <div class="rt-breadcump rt-breadcump-height">
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url('{{ asset('front/assets/images/backgrounds/bredcump.png') }}')">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>Bienvenue à notre boutique</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="#" title="Home">Home</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+    <h2>je passe ma commande</h2>
+    <p>Choisir vos préférences avant de passer votre commande sur TUNEASY .</p>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+
+                {% set formHtml %}
+                    {{ form_start(form,{action:path('order_recap')}) }}
+                    {{ form_end(form) }}
+                {% endset %}
+                {{ formHtml|replace({'[br]': '<br/>'})|raw }}
+
+
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="text-center">
+                    <b>Recap de votre commande :</b>
+                </div>
+
+                <div class="order-summary">
+                    {% for product in cart %}
+                        <div class="row">
+
+                            <div class="col-2">
+                                <img src="/upload/img/{{ product.produit.image }}" alt="{{ product.produit.name }}" height="75px" class="img-fluid">
+                            </div>
+                            <div class="col-8 my-auto">
+                                {{ product.produit.name }} <br/>
+                                <small>{{ product.produit.subtitle }}</small>
+                            </div>
+                            <div class="col-2 my-auto">
+                                * {{ product.quantity }}
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                    <b>Boutton pour payer</b>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+{% endblock %}

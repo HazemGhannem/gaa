@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}revolgame {% endblock %}
+
+{% block body %}
+    <div class="rt-breadcump rt-breadcump-height"> )
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url('{{ asset('front/assets/images/backgrounds/bredcump.png') }}')">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>Mon compte</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="#" title="Home">Home</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            Ajouter une adresse
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+    <hr>
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-12">{{ form_row(form.name) }}</div>
+            <div class="col-md-6">{{ form_row(form.firstname) }}</div>
+            <div class="col-md-6">{{ form_row(form.lastname) }}</div>
+            <div class="col-md-6">{{ form_row(form.adress) }}</div>
+            <div class="col-md-6">{{ form_row(form.ville) }}</div>
+            <div class="col-md-6">{{ form_row(form.postal) }}</div>
+            <div class="col-md-6">{{ form_row(form.phone) }}</div>
+            <div class="col-md-12">{{ form_row(form.submit) }}</div>
+
+
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+
+
+{% endblock %}

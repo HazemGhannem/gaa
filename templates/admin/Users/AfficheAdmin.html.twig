@@ -1,0 +1,67 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Users Table</p>
+
+
+
+                        <p class="card-title">number of masculin : {{ nbm }}</p>
+                        <p class="card-title">number of feminin : {{ nbf }}</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Nom </th>
+                                            <th>Prénom</th>
+                                            <th>Adresse Mail</th>
+
+                                            <th>Mot de Passe</th>
+
+
+                                            <th>supprimer</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr {% for c in user %}>
+                                            <td>{{ c.id }}</td>
+                                            <td>{{ c.firstname }}</td>
+                                            <td>{{ c.lastname }}</td>
+                                            <td>{{ c.email }} </td>
+
+
+
+
+
+
+                                            <td>{{ c.password }} </td>
+
+
+
+                                            <td><a href="{{ path('deleteA',{'id': c.id }) }}">Delete</a> </td>
+
+                                        </tr {% endfor %}>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

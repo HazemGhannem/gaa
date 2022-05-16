@@ -1,0 +1,69 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-title">Product Table</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>{% trans %}Approved{% endtrans %}</th>
+                                            <th>{% trans %}Photo{% endtrans %}</th>
+                                            <th>{% trans %}Title{% endtrans %}</th>
+                                            <th>{% trans %}Start date{% endtrans %}</th>
+
+                                            <th>{% trans %}Hour{% endtrans %}</th>
+                                            <th>{% trans %}City{% endtrans %}</th>
+
+                                            <th>{% trans %}        Approved
+                                                {% endtrans %}</th>
+
+                                            <th>{% trans %}Update{% endtrans %}</th>
+                                            <th>{% trans %}Delete{% endtrans %}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr {% for e in evenement %} >
+                                            <td><label class="switch" {% if e.approuver==1 %}>
+                                                    <input type="checkbox" checked>
+                                                    <span class="slider"></span>
+                                                    {% else  %}
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label{% endif %}></td>
+                                            <td>
+
+                                                <a href="{{ path('AfficheUnE',{'id': e.idEvenement}) }}">
+                                                    <img src="{{ asset('upload/'~e.photo) }}" alt="  {{ e.photo }}" width="130" height="130"></a></a></td>
+                                            <td>{{ e.titre }}</td>
+                                            <td>{{ e.dateDebut | date("m/d/Y")}}</td>
+                                            <td>{{ e.heure }}</td>
+                                            <td>{{ e.ville }}</td>
+
+
+                                            <td>{{ e.approuver }}</td>
+                                            <td><a href="{{ path('modifierEadmin',{'id': e.idEvenement}) }}">
+                                                    <button type="button" class="btn btn-outline-warning"><font size="3pt">{% trans %}Update{% endtrans %}</font></button></a></td>
+                                            <td><a href={{ path('delete_evenementadmin', {'id': e.idEvenement}) }}>
+                                                    <button type="button" class="btn btn-outline-danger"><font size="3pt">{% trans %}Delete{% endtrans %}</font></button></a></td>
+                                        </tr {% endfor %}></tbody></table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

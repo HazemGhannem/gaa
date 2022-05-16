@@ -1,0 +1,125 @@
+{% extends 'admin/base.html.twig' %}
+ {% block title %} <title>Restaurant Admin</title> {% endblock %}
+{% block css %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Skydash Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="back/vendors/feather/feather.css">
+    <link rel="stylesheet" href="back/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="back/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="back/vendors/mdi/css/materialdesignicons.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="back/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="back/images/favicon.png" />
+{% endblock %}
+
+{% block body %}
+
+    <!-- partial -->
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+
+
+                <style>
+                    .centerbtnAMD {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                    }
+                </style>
+
+
+
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Liste des reservations de competitions</h4>
+                                <p class="card-description">
+                                    {{ ReservationCompetitions|length }} <code>competition(s)</code>
+                                </p>
+                                <p class="card-description">
+                                    <code>
+                                        <a href={{ path("ajoutReservation") }} style="text-decoration:underline;color:#FF4747">Ajouter Reservationcompétition</a>
+                                    </code>
+                                </p>
+
+
+
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+
+                                            <th>Nombre de participants </th>
+                                            <th>ACTIONS</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for compR in ReservationCompetitions %}
+                                            <tr>
+                                                <td>{{ compR.nbrparticipants }}</td>
+
+                                                <td>
+                                                    <a href={{ path("deleteReservationCompetition", { 'idRes': compR.id }) }} style="text-decoration:none;color:red;">SUPPRIMER</a>
+
+                                                </td>
+                                                <td>
+                                                    <label class="badge badge-warning">
+                                                        <a href={{ path("modifReservation", {'idRes': compR.id }) }} style="text-decoration:none;color:red">MODIFIER</a>
+                                                    </label>
+                                                </td>
+
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+{% endblock %}
+
+{% block JS %}
+    <!-- plugins:js -->
+    <script src="back/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="back/js/off-canvas.js"></script>
+    <script src="back/js/hoverable-collapse.js"></script>
+    <script src="back/js/template.js"></script>
+    <script src="back/js/settings.js"></script>
+    <script src="back/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <!-- End custom js for this page-->
+{% endblock %}

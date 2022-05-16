@@ -1,0 +1,55 @@
+<html>
+<head>
+    {% block style %}
+    <link rel="stylesheet" href="{{ asset('back/vendors/feather/feather.css') }}">
+    <link rel="stylesheet" href="{{ asset('back/vendors/ti-icons/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('back/vendors/css/vendor.bundle.base.css') }}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{{ asset('back/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}">
+    <link rel="stylesheet" href="{{ asset('back/vendors/ti-icons/css/themify-icons.css') }}">
+        <link rel="stylesheet" href="back/vendors/mdi/css/materialdesignicons.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('back/js/select.dataTables.min.css') }}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ asset('back/css/vertical-layout-light/style.css') }}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{{ asset('back/images/favicon.png') }}" />
+    {% endblock %}
+</head>
+
+
+
+
+<body>
+{{ include('admin/includes/header.html.twig') }}
+{% block body %}
+{% endblock %}
+{{ include('admin/includes/footer.html.twig') }}
+
+
+
+
+<script src="{{ asset('back/vendors/js/vendor.bundle.base.js') }}"></script>
+
+<script src="{{ asset('back/vendors/chart.js/Chart.min.js') }}"></script>
+<script src="{{ asset('back/vendors/datatables.net/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('back/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ asset('back/js/dataTables.select.min.js') }}"></script>
+
+<script src="{{ asset('back/js/off-canvas.js') }}"></script>
+<script src="{{ asset('back/js/hoverable-collapse.js') }}"></script>
+<script src="{{ asset('back/js/template.js') }}"></script>
+<script src="{{ asset('back/js/settings.js') }}"></script>
+<script src="{{ asset('back/js/todolist.js') }}"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="{{ asset('back/js/dashboard.js') }}"></script>
+<script src="{{ asset('back/js/Chart.roundedBarCharts.js') }}"></script>
+<!-- End custom js for this page-->
+
+
+
+</body>
+
+</html>

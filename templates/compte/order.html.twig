@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TUNEASY {% endblock %}
+
+{% block body %}
+    <div class="rt-breadcump rt-breadcump-height"> )
+        <div class="rt-page-bg rtbgprefix-cover" style="background-image: url('{{ asset('front/assets/images/backgrounds/bredcump.png') }}')">
+        </div><!-- /.rt-page-bg -->
+        <div class="container">
+            <div class="row rt-breadcump-height">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <h3>Mon compte</h3>
+                        <div class="breadcrumbs">
+                            <span class="divider"><i class="icofont-home"></i></span>
+                            <a href="#" title="Home">Home</a>
+                            <a href="{{ path('compte') }}">Retour</a>
+                            <span class="divider"><i class="icofont-simple-right"></i></span>
+                            Mes Commandes
+
+                        </div><!-- /.breadcrumbs -->
+                    </div><!-- /.breadcrumbs-content -->
+                </div><!-- /.col-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.rt-bredcump -->
+
+    <div class="container">
+        <center>
+
+            <h1>Mes Commandes </h1>
+            <br>Bonjour  {{ app.user.firstname }}  <br>
+            C'est dans cet espace que vous allez pouvoir gérer toutes vos commandes.<br>
+
+
+        </center>
+        <hr>
+
+
+        {% if orders|length == 0 %}
+            <p class="text-center"> Vous n'avez pas encore ajouté des adresses à votre compte.</p>
+        {% else %}
+            <div class="row ">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Référence</th>
+                            <th scope="col">Passé le</th>
+
+                            <th scope="col">produit(s)</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+
+
+                    </thead>
+                    <tbody>
+
+                        {% for order in orders %}
+                        <tr>
+                            <th> <span class="badge badge-secondary"> {{ order.reference }}</span></th>
+                            <th> {{ order.createdAt|date('d/m/Y') }}</th>
+
+                            <th> {{ order.orderDetails|length }}</th>
+                            <th>{{ order.carrierPrice + order.getTotal }} €</th>
+                            <th class="text-right"><a href="{{ path('compte_order_show' , {'reference' : order.reference }) }}">voir ma commande</th>
+
+
+
+                        </tr>
+                        {% endfor %}
+
+
+
+
+                    </tbody>
+
+                </table>
+
+
+
+
+
+            </div>
+
+
+
+
+
+        {% endif%}
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
